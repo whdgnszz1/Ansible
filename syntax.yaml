@@ -1,0 +1,16 @@
+---
+  - name: sampleplaybook
+    hosts: all
+    become: yes
+    become_user: root
+
+    tasks:
+    - name: Install Apache hppd
+      yum:
+      name: httpd
+      state: present
+
+    - name: 2nd task
+      service:
+      name: httpd
+      state: started  
